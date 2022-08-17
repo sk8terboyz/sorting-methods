@@ -1,10 +1,6 @@
-#sortedI {
+#sortedM {
     border: 2px solid black;
     min-height: 50px;
     max-width: 50%;
     margin-left: 25%;
-}
-
-.insertionSort {
-    margin: 2%;
 }

@@ -23,18 +23,18 @@ const InsertionSort = ({unsortedArray}) => {
             }
             return;
         }
-        $("#sorted")[0].innerHTML = "You need to add values first";
+        $("#sortedI")[0].innerHTML = "You need to add values first";
     }
     
     const setInfo = (arr) => {
-        let output = $("#sorted")[0];
+        let output = $("#sortedI")[0];
         output.innerHTML = `<strong>Sorted:</strong> [${[...arr]}] <hr /> <h5>Insertion Sort Complexity</h5> <p><strong>Time Complexity:</strong></p> <p>Best: O(n)</p> <p>Worst: O(n<sup>2</sup>)</p> <p>Average: O(n<sup>2</sup>)</p> <p><strong>Space Complexity:</strong> O(1)</p>`;
     }
 
     return (
         <div className="insertionSort">
             <button onClick={sort}>Insertion Sort</button>
-            <p id="sorted"></p>
+            <p id="sortedI"></p>
         </div>
     )
 }

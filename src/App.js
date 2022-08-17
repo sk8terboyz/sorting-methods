@@ -5,6 +5,7 @@ import { useState } from 'react';
 import QuickSort from './components/QuickSort/QuickSort';
 import InsertionSort from './components/InsertionSort/InsertionSort';
 import ArrayInput from './components/ArrayInput/ArrayInput';
+import MergeSort from './components/MergeSort/MergeSort';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       {/* <QuickSort /> */}
       <ArrayInput setUnsortedArray={setUnsortedArray} />
       <InsertionSort unsortedArray={unsortedArray} />
+      <MergeSort unsortedArray={unsortedArray}/>
     </div>
   );
 }
