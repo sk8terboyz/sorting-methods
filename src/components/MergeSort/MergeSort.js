@@ -2,7 +2,7 @@ import $ from 'jquery';
 import "./MergeSort.css"
 const MergeSort = ({unsortedArray}) => {
 
-    const merge = (arr, p, q, r) => {
+    const merge = async (arr, p, q, r) => {
 
         let n1 = q - p + 1;
         let n2 = r - q;
@@ -20,22 +20,19 @@ const MergeSort = ({unsortedArray}) => {
         let i = 0;
         let j = 0;
         let k = p;
-        
-        // undefined/extra value gets added in this while loop
+
         while(i < n1 && j < n2) {
-            if(L[i] <= R[j]) {
+            // An undefined value is added by the R[j] and then gets sorted to the beginning without this extra condition
+            if(L[i] <= R[j] || (L[i] && R[j] == null)) {
                 arr[k] = L[i];
                 i++;
             } else {
-                if(R[j]){
-                    arr[k] = R[j];
-                }
-                console.log(R[j]);
+                arr[k] = R[j];
                 j++;
             }
             k++;
         }
-        console.log(arr);
+        
         // Copy remaining elements if they are present
         while(i < n1) {
             arr[k] = L[i];
@@ -47,10 +44,9 @@ const MergeSort = ({unsortedArray}) => {
             j++;
             k++;
         }
-        
     }
 
-    const sort = (arr = [], left = 0, right = 0) => {
+    const sort = async(arr = [], left = 0, right = 0) => {
         if(arr) {
             if(left >= right) {
                 return; // returns recursively
@@ -58,11 +54,11 @@ const MergeSort = ({unsortedArray}) => {
                 // m is the point where the array is divided into two subarrays
             let m = left + parseInt((right-left)/2);
 
-            sort(arr, left, m);
-            sort(arr, m + 1, right);
+            await sort(arr, left, m);
+            await sort(arr, m + 1, right);
 
             // Merge sorted arrays
-            merge(arr, left, m, right);
+            await merge(arr, left, m, right);
             setInfo(arr);
             return;
         }
@@ -76,7 +72,6 @@ const MergeSort = ({unsortedArray}) => {
     }
 
     const setInfo = (arr) => {
-        console.log(arr);
         let output = $("#sortedM")[0];
         output.innerHTML = `<strong>Sorted:</strong> [${[...arr]}] <hr /> <h5>Merge Sort Complexity</h5> <p><strong>Time Complexity:</strong></p> <p>Best: O(nlog(n))</p> <p>Worst: O(nlog(n))</p> <p>Average: O(nlog(n))</p> <p><strong>Space Complexity:</strong> O(n)</p>`;
     }
