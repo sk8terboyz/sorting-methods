@@ -2,11 +2,11 @@ import './App.css';
 import Header from './components/Header/Header';
 import './bootstrap.min.css';
 import { useState } from 'react';
-import QuickSort from './components/QuickSort/QuickSort';
 import InsertionSort from './components/InsertionSort/InsertionSort';
 import ArrayInput from './components/ArrayInput/ArrayInput';
 import MergeSort from './components/MergeSort/MergeSort';
 import ShellSort from './components/ShellSort/ShellSort';
+import { Container, Col, Row } from 'react-bootstrap';
 
 function App() {
 
@@ -16,11 +16,25 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <QuickSort /> */}
-      <ArrayInput setUnsortedArray={setUnsortedArray} />
-      <InsertionSort unsortedArray={unsortedArray} />
-      <MergeSort unsortedArray={unsortedArray} />
-      <ShellSort unsortedArray={unsortedArray} />
+      <Container>
+        <Row>
+          <Col>
+            <ArrayInput setUnsortedArray={setUnsortedArray} />
+          </Col>
+        </Row>
+        <br />
+        <Row>
+          <Col>
+            <InsertionSort unsortedArray={unsortedArray} />
+          </Col>
+          <Col>
+            <MergeSort unsortedArray={unsortedArray} />
+          </Col>
+          <Col>
+            <ShellSort unsortedArray={unsortedArray} />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

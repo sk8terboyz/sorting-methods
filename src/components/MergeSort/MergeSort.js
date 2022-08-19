@@ -73,13 +73,20 @@ const MergeSort = ({unsortedArray}) => {
 
     const setInfo = (arr) => {
         let output = $("#sortedM")[0];
-        output.innerHTML = `<strong>Sorted:</strong> [${[...arr]}] <hr /> <h5>Merge Sort Complexity</h5> <p><strong>Time Complexity:</strong></p> <p>Best: O(nlog(n))</p> <p>Worst: O(nlog(n))</p> <p>Average: O(nlog(n))</p> <p><strong>Space Complexity:</strong> O(n)</p>`;
+        let info = $("#infoM")[0];
+        output.innerHTML = `[${[...arr]}]`;
+        info.innerHTML = `<h5>Merge Sort Complexity</h5> <p><strong>Time Complexity:</strong></p> <p>Best: O(nlog(n))</p> <p>Worst: O(nlog(n))</p> <p>Average: O(nlog(n))</p> <p><strong>Space Complexity:</strong> O(n)</p>`;
     }
 
     return (
         <div>
             <button onClick={start}>Merge Sort</button>
-            <p id="sortedM"></p>
+            <div className='display'>
+                <p><strong>Sorted:</strong></p>
+                <p id="sortedM"></p>
+                <hr />
+                <p id="infoM"></p>
+            </div>
         </div>
     )
 }

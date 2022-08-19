@@ -30,14 +30,21 @@ const ShellSort = ({ unsortedArray }) => {
     }
 
     const setInfo = (arr) => {
-        let output = $("#sortedS")[0];
-        output.innerHTML = `<strong>Sorted:</strong> [${[...arr]}] <hr /> <h5>Shell Sort Complexity</h5> <p><strong>Time Complexity:</strong></p> <p>Best: O(nlog(n))</p> <p>Worst: O(n<sup>2</sup>)</p> <p>Average: O(nlog(n))</p> <p><strong>Space Complexity:</strong> O(1)</p>`;
+        let sorted = $("#sortedS")[0];
+        let info = $("#infoS")[0];
+        sorted.innerHTML = `[${[...arr]}]`;
+        info.innerHTML = `<h5>Shell Sort Complexity</h5> <p><strong>Time Complexity:</strong></p> <p>Best: O(nlog(n))</p> <p>Worst: O(n<sup>2</sup>)</p> <p>Average: O(nlog(n))</p> <p><strong>Space Complexity:</strong> O(1)</p>`;
     }
 
     return (
         <div>
             <button onClick={start}>Shell Sort</button>
-            <p id="sortedS"></p>
+            <div className='display'>
+                <p><strong>Sorted:</strong></p>
+                <p id="sortedS"></p>
+                <hr />
+                <p id="infoS"></p>
+            </div>
         </div>
     )
 }

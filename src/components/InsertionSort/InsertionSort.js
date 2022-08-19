@@ -28,13 +28,20 @@ const InsertionSort = ({unsortedArray}) => {
     
     const setInfo = (arr) => {
         let output = $("#sortedI")[0];
-        output.innerHTML = `<strong>Sorted:</strong> [${[...arr]}] <hr /> <h5>Insertion Sort Complexity</h5> <p><strong>Time Complexity:</strong></p> <p>Best: O(n)</p> <p>Worst: O(n<sup>2</sup>)</p> <p>Average: O(n<sup>2</sup>)</p> <p><strong>Space Complexity:</strong> O(1)</p>`;
+        let info = $("#infoI")[0];
+        output.innerHTML = `[${[...arr]}]`;
+        info.innerHTML = `<h5>Insertion Sort Complexity</h5> <p><strong>Time Complexity:</strong></p> <p>Best: O(n)</p> <p>Worst: O(n<sup>2</sup>)</p> <p>Average: O(n<sup>2</sup>)</p> <p><strong>Space Complexity:</strong> O(1)</p>`;
     }
 
     return (
         <div className="insertionSort">
             <button onClick={sort}>Insertion Sort</button>
-            <p id="sortedI"></p>
+            <div className='display'>
+                <p><strong>Sorted:</strong></p>
+                <p id="sortedI"></p>
+                <hr />
+                <p id="infoI"></p>
+            </div>
         </div>
     )
 }
