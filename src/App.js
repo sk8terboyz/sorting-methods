@@ -6,6 +6,7 @@ import QuickSort from './components/QuickSort/QuickSort';
 import InsertionSort from './components/InsertionSort/InsertionSort';
 import ArrayInput from './components/ArrayInput/ArrayInput';
 import MergeSort from './components/MergeSort/MergeSort';
+import ShellSort from './components/ShellSort/ShellSort';
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
       {/* <QuickSort /> */}
       <ArrayInput setUnsortedArray={setUnsortedArray} />
       <InsertionSort unsortedArray={unsortedArray} />
-      <MergeSort unsortedArray={unsortedArray}/>
+      <MergeSort unsortedArray={unsortedArray} />
+      <ShellSort unsortedArray={unsortedArray} />
     </div>
   );
 }
