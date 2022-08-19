@@ -8,15 +8,33 @@ This sorting algorithm is one of the simplest, but intensive methods that works 
 
 Time Complexity
   - Best	O(n)
-  - Worst	O(n2)
-  - Average	O(n2)
+  - Worst	O(n^2)
+  - Average	O(n^2)
 
 Space Complexity
   - O(1)
   - Stability	Yes
 
-## Quick Sort
-
 ## Merge Sort
 
-## Bubble Sort
+Time Complexity
+  - Best	O(nlog(n))
+  - Worst	O(nlog(n))
+  - Average	O(nlog(n))
+
+Space Complexity
+  - O(n)
+  - Stability	Yes
+  
+## Shell Sort
+
+By making use of the insertion sort method, shell sort adds the idea of gapping the values to be sorted and sorting the values at each gap. Ideally this provides the exchange of items far apart to be sorted and the rest will follow suit as the gap gets smaller until eventually it does a final sort through the entire array/list.
+
+Time Complexity
+  - Best	O(nlog(n))
+  - Worst	O(n^2)
+  - Average	O(nlog(n))
+
+Space Complexity
+  - O(1)
+  - Stability	No
